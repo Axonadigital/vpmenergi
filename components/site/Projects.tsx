@@ -3,12 +3,10 @@ import Image from "next/image";
 const partners = [
   {
     name: "Jämtkraft",
-    tagline: "Energileverantör i Jämtland",
     logo: "/images/jämtkraft-transparant.png",
   },
   {
     name: "HSB",
-    tagline: "Bostadsrättsförening",
     logo: "/images/projects/HSB.png",
   },
 ] as const;
@@ -32,22 +30,18 @@ export default function Projects() {
             </p>
           </div>
 
-          <ul className="flex flex-col items-center justify-center gap-16 sm:flex-row sm:gap-20 md:col-span-7">
+          <ul className="flex flex-col items-center justify-center gap-16 sm:flex-row sm:gap-24 md:col-span-7">
             {partners.map((partner) => (
-              <li
-                key={partner.name}
-                className="flex flex-col items-center gap-5"
-              >
-                <div className="relative h-24 w-56 md:h-28 md:w-64">
+              <li key={partner.name} className="flex items-center justify-center">
+                <div className="relative h-40 w-80 md:h-48 md:w-96">
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} logotyp`}
                     fill
-                    sizes="(min-width: 768px) 260px, 220px"
+                    sizes="(min-width: 768px) 384px, 320px"
                     className="object-contain"
                   />
                 </div>
-                <span className="eyebrow text-center">{partner.tagline}</span>
               </li>
             ))}
           </ul>
